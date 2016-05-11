@@ -1,0 +1,27 @@
+Package: sticky.attributes
+Type: Package
+Title: Persist attributes through data manipulations.
+Description: Sticky attributes are attributes that are resilent when the objects
+    they described are subsetted, extended, appended, etc or when those objects
+    are inserted into or extracted from list-like objects such as data frames or
+    data tables.
+Version: 0.1
+Date: 2016-05-10
+Authors@R: c(
+      person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
+      person("Decision Patterns", role = "cph")
+    )
+License: GPL-2 | file LICENSE
+URL: https://github.com/decisionpatterns/sticky.attributes
+    http://www.decisionpatterns.com
+BugReports: https://github.com/decisionpatterns/sticky.attributes/issues
+Depends:
+    R (>= 3.1.0)
+Suggests:
+    magrittr (>= 1.5),
+    testthat (>= 0.10.0)
+LazyData: TRUE
+Collate:
+    'internals.R'
+    'sticky.R'
+    'append.R'
