@@ -1,6 +1,6 @@
 Package: sticky.attributes
 Type: Package
-Title: Persist attributes through data manipulations.
+Title: Persist attributes through data manipulations
 Description: Sticky attributes are attributes that are resilent when the objects
     they described are subsetted, extended, appended, etc or when those objects
     are inserted into or extracted from list-like objects such as data frames or
@@ -19,9 +19,12 @@ Depends:
     R (>= 3.1.0)
 Suggests:
     magrittr (>= 1.5),
-    testthat (>= 0.10.0)
+    testthat (>= 0.10.0),
+    data.table (>= 1.9.7)
 LazyData: TRUE
 Collate:
     'internals.R'
     'sticky.R'
     'append.R'
+    'extract1.R'
+    'subset.R'

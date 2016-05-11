@@ -42,23 +42,16 @@
 #' @include internals.R
 #' @export
 
-sticky <- function(x) UseMethod('sticky')
-
-sticky.default <- function(x) {
+sticky <- function(x) {
+# UseMethod('sticky')
+#}
+# sticky.default <- function(x) {
 
   if( is.atomic(x) ) return( .init(x) )
 
   warning( 'sticky attributes are not supported for non-atomic objects of class: ',
            paste( class(x), collapse = ", " )
           )
-}
-
-
-## SUBSET in data.frame
-`[.sticky` <- function(x,i,...) {
-  r <- NextMethod("[")
-  mostattributes(r) <- attributes(x)
-  r
 }
 
 

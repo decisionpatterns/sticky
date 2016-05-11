@@ -5,9 +5,7 @@
 \alias{print.sticky}
 \alias{sticky}
 \alias{unsticky}
-\title{Sticky attributes
-
-Persist attributes through manipulations}
+\title{Sticky Attributes}
 \usage{
 sticky(x)
 
@@ -23,8 +21,6 @@ is.sticky(x)
 \item{...}{Additional arguments passed to subsequent method(s)}
 }
 \description{
-Sticky attributes
-
 Persist attributes through manipulations
 
 #

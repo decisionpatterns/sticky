@@ -4,9 +4,41 @@
 library(magrittr)
 
 
-## HEADER
-# FUNCTIONS USED FOR TESTING
-source('header.r')
+# HEADER
+# Functions used for testing
+
+
+set_foo <- function(x, value="bar") {
+    attr(x,'foo') = 'bar'
+    return(x)
+}
+
+# expect_sticky <- function (object, class, info = NULL, label = NULL)
+# {
+# #     if (is.null(label)) {
+# #         label <- find_expr("object")
+# #     }
+#     expect_that(object, is_a('sticky'), info, label)
+# }
+
+# expect_attr_foo <- function (object, class, info = NULL, label = NULL)
+# {
+# #     if (is.null(label)) {
+# #         label <- find_expr("object")
+# #     }
+#
+#     expect_that( attr(object,'foo'), equals('bar'), info, label)
+# }
+
+
+
+# expect_sticky <- function(x) {
+#   testthat::expect_is(x,'sticky')
+# }
+
+# expect_attr_foo <- function(x) {
+#   x %>% attr('foo') %>% expect_equal('bar')
+# }
 
 
 ## INIT
@@ -72,7 +104,6 @@ x_sub[0] %>% expect_is('sticky')
 # x <- 1:5 %>% sticky
 # x[[1]] %>% expect_is('sticky')
 
-
 ## `[<-`
 context("`[<-`")
 x <- 1:5 %>% sticky
@@ -85,21 +116,22 @@ x %>% expect_is('sticky')
 # ----------
 context('subset()')
 x <- 1:5 %>% sticky
-x %>% set_foo()
-attr(x,'foo') = 'bar'
+x <- x %>% set_foo()
+# attr(x,'foo') = 'bar'
 
-x_test <- x %>% subset(c(T,F,T,F,T))
-x_test %>% expect_sticky
-x_test %>% expect_attr_foo
+x_test <- x %>% subset(c(TRUE,FALSE,TRUE,FALSE,TRUE))
+# saveRDS(x_test, file="~/x_test.rds")
+x_test %>% expect_is('sticky')
+x_test %>% attr('foo') %>% expect_equal('bar')
 
 x_test <- x %>% subset(c(T,T,T,T,T))
-x_test %>% expect_sticky
-x_test %>% expect_attr_foo
+x_test %>% expect_is('sticky')
+x_test %>% attr('foo') %>% expect_equal('bar')
 
 
-x_test %>% subset(c(F,F,F,F,F)) %>% expect_sticky
-x_test %>% expect_sticky
-x_test %>% expect_attr_foo
+x_test <- x %>% subset(c(F,F,F,F,F))
+x_test %>% expect_is('sticky')
+x_test %>% attr('foo') %>% expect_equal('bar')
 x_test <- x_test %>% set_foo('baz')
 
 
@@ -111,82 +143,7 @@ x. <- 1:5 %>% sticky
 x. %>% expect_is('sticky')
 x. <- x. %>% set_foo
 x. <- x. %>% append(1:3)
-x. %>% expect_sticky
-x. %>% expect_attr_foo
+x. %>% expect_is('sticky')
+x. %>% attr('foo') %>% expect_equal('bar')
 
 
-
-# DATA FRAME
-# ----------
-context('data.frame')
-x <- 1:5 %>% sticky %>% set_foo
-
-y <- letters[1:5]
-
-df <- data.frame( yes=x, no=y)
-
-df$no %>% is.sticky %>% expect_false# DATA.FRAME
-context('data.frame: $')
-df$yes %>% expect_sticky
-df$yes %>% expect_attr_foo
-
-
-context('data.frame: [[')
-
-df[[1]][1:3] %>% expect_sticky
-df[[1]][1:3] %>% expect_attr_foo
-
-df[['yes']] %>% expect_sticky
-df[['yes']] %>% expect_attr_foo
-
-
-context('data.frame: [')
-
-df[1:3, 'yes'] %>% expect_sticky
-df[1:3, 1] %>% expect_attr_foo
-
-
-context('df/add column')
-
-df$yes2 <- x
-
-df$yes2 %>% expect_sticky
-df$yes2 %>% expect_attr_foo
-
-
-# DATA TABLE
-# ----------
-context('data.table')
-x <- 1:5 %>% sticky %>% set_foo
-
-y <- letters[1:5]
-
-df <- data.table( yes=x, no=y)
-
-df$no %>% is.sticky %>% expect_false# DATA.TABLE
-context('data.table: $')
-df$yes %>% expect_sticky
-df$yes %>% expect_attr_foo
-
-
-context('data.table: [[')
-
-df[[1]][1:3] %>% expect_sticky
-df[[1]][1:3] %>% expect_attr_foo
-
-df[['yes']] %>% expect_sticky
-df[['yes']] %>% expect_attr_foo
-
-
-context('data.frame: [')
-
-df[1:3, 'yes'] %>% expect_sticky
-df[1:3, 1] %>% expect_attr_foo
-
-
-context('dt/add column')
-
-df$yes2 <- x
-
-df$yes2 %>% expect_sticky
-df$yes2 %>% expect_attr_foo
