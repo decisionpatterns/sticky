@@ -6,7 +6,7 @@ set_foo <- function(x, value="bar") {
     return(x)
 }
 
-context('data.frame')
+context('vector in data.frame')
 x <- 1:5 %>% sticky %>% set_foo
 y <- letters[1:5]
 
