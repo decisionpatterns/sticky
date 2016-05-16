@@ -1,7 +1,7 @@
 #' Extract
 #'
 #' @param x sticky; object to extract from
-#' @param i values to extract
+# @param i values to extract
 #' @param ... additional parameters
 #'
 #' @details
@@ -11,7 +11,7 @@
 #' @include sticky.R
 #' @export
 
-`[.sticky` <- function(x,i,...) {
+`[.sticky` <- function(x,...) {
   r <- NextMethod("[")
   mostattributes(r) <- attributes(x)
   r

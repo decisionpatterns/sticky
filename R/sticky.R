@@ -10,6 +10,8 @@
 #' \code{sticky} creates objects whose attributes are resilent to subsetting and
 #' placing in containers such as lists, data.frames and data.tables.
 #'
+#' The \code{print} method works by stripping the
+#'
 #' @references
 #'   This has been asked and written about numerous times on Stack Overflow. The
 #'   first has a fairly comprehensive list to others
@@ -39,28 +41,17 @@
 #'
 #'   is.sticky(x)             # TRUE
 #'
-#' @include internals.R
+#' @include init.R
 #' @export
 
-sticky <- function(x) {
-# UseMethod('sticky')
-#}
-# sticky.default <- function(x) {
-
-  if( is.atomic(x) ) return( .init(x) )
-
-  warning( 'sticky attributes are not supported for non-atomic objects of class: ',
-           paste( class(x), collapse = ", " )
-          )
-}
-
-
+sticky <- function(x)
+  return( .init(x) )
 
 
 #' @rdname sticky
 #' @export
 
-unsticky <- function(x) .deinit(x)
+unstick <- function(x) .deinit(x)
 
 
 # sticky.vector <- function(x) .init(x)
@@ -79,7 +70,4 @@ print.sticky <- function(x, ...) {
 #' @rdname sticky
 #' @export
 
-is.sticky <- function(x) is(x,'sticky')
-
-
-
+is.sticky <- function(x) is(x,'sticky') | is(x,'sticky_recursive')

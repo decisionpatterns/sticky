@@ -4,12 +4,10 @@
 \alias{[.sticky}
 \title{Extract}
 \usage{
-\method{[}{sticky}(x, i, ...)
+\method{[}{sticky}(x, ...)
 }
 \arguments{
 \item{x}{sticky; object to extract from}
-
-\item{i}{values to extract}
 
 \item{...}{additional parameters}
 }

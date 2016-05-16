@@ -1,5 +1,5 @@
 ---
-title: "Sticky Attributes"
+title: "Sticky: Persist attributes through data manipulations"
 author: "Christopher Brown"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -9,22 +9,57 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Sticky attributes are additional functionality that make attributes resilent 
-various manipulations operations including:
+```{r, echo=FALSE, warning=FALSE, cache=FALSE, results='hide', message=FALSE}
+library(magrittr)
+# library(sticky)
+```
 
-- subset
-- extend
-- append
-- insertion into a list-like object such as a data.frame or data.table
-- slices from a data.frame or data.table
+In base R, attributes when the objects they described are changed. By marking 
+objects 'sticky', attributes become resilent to normal data manipulation 
+operations: subsetted, extended, appended, etc. or when inserted into or 
+extracted from list-like objects such as data frames or data tables. 'sticky' 
+works on both atomic and recursive objects.
 
-Basically, the attributes stick with the object much like attributes do in other
-languages.
+Basically, sticky attributes stick with the object much like attributes of 
+other programming languages. There isn't much to the package. The `sticky` 
+function and it's complement, `unstick` are the only interfaces to the package.
 
 
-## Limitations
+## Example
 
-There are a few areas where the methods of this package breakdown:
+Here is an simple example of a sticky attribute in action. Under base R, 
+attributes do not survive a slice/subset/`[` operation: 
+
+    x <- 1:5
+    attr(x, 'foo') <- 'bar'
+    attr(x[1:3],'foo')        # NULL -- attribute removed 
+
+To ensure that they get preserved, simply declare the object as `sticky`:
+
+    x <- sticky(x)
+    attr(x[1:3],'foo')        # 'bar' -- attribute preserved    
+
+That it. 
+
+## Installation 
+
+### Stable Version: CRAN (coming soon)
+
+    install.packages('sticky.attributes')
+
+### Development Version: Github
+
+    libraty(devtools)
+    lnstall_github('decisionpatterns/sticky.attributes')
+
+
+## Use Cases
+
+There are a number of things that can be done with `sticky`:
+
+ * Preserve attributes of atomic or recursive objects
+ * Ensure that attributes of vectors in data.[frame|table] are preserved
+ * Build a basic class system.
 
 
 ## References
@@ -39,46 +74,3 @@ few of the most prevalent discussions.
 
 
 
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

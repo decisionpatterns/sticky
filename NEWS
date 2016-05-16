@@ -1,4 +1,7 @@
+# Version 0.2
+- Add tests
+- Support recursive objects
+- Ready for CRAN
 
 # Version 0.1
-
-- Initial Release
+- Initial Release (Git Hub only)

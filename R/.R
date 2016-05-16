@@ -1,3 +1,3 @@
-#' @include internals.R sticky.R append.R
+#' @include init.R sticky.R append.R
 
 NULL

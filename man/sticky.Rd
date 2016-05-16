@@ -4,12 +4,12 @@
 \alias{is.sticky}
 \alias{print.sticky}
 \alias{sticky}
-\alias{unsticky}
+\alias{unstick}
 \title{Sticky Attributes}
 \usage{
 sticky(x)
 
-unsticky(x)
+unstick(x)
 
 \method{print}{sticky}(x, ...)
 
@@ -28,6 +28,8 @@ Persist attributes through manipulations
 \details{
 \code{sticky} creates objects whose attributes are resilent to subsetting and
 placing in containers such as lists, data.frames and data.tables.
+
+The \code{print} method works by stripping the
 }
 \examples{
 x <- 1:5

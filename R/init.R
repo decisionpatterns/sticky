@@ -9,10 +9,20 @@
 #' @details
 #'
 #' \code{.init} : initializes the class
+#' \code{.deinit} : un-initialize the class
 #'
-#' @rdname internals
+#' These are internals functions not to be called directly, please use the
+#' interfaces, \code{sticky} and \code{unsticky}.
+#'
+#' @seealso
+#'    \code{sticky} and \code{unsticky}
+#'
+#' @examples
+#'   # - tk
+#'
+#' @rdname init
 
-.init <- function(x) {    # Should be .init(?)
+.init <- function(x) {
 
   if( ! is.sticky(x) )
     x <- structure(x, class = c( 'sticky', class(x) ) )
@@ -21,6 +31,8 @@
 
 }
 
+
+#' @rdname init
 
 .deinit <- function(x) {
 
