@@ -36,7 +36,7 @@
 
 .deinit <- function(x) {
 
-  attr( x, 'units' ) = NULL
+  # attr( x, 'units' ) = NULL
   class(x) <- setdiff( class(x), 'sticky')
 
   return(x)

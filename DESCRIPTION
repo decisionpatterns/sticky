@@ -1,11 +1,11 @@
 Package: sticky
 Type: Package
-Title: Persist attributes through data manipulations
-Description: In base R, attributes when the objects they described are changed.
-    By marking objects 'sticky', attributes become resilent to normal data
-    manipulation operations: subsetted, extended, appended, etc. or when
-    inserted into or extracted from list-like objects such as data frames or
-    data tables. 'sticky' works on both atomic and recursive objects.
+Title: Persist attributes through data operateions
+Description: In base R, attributes disappear when the objects they described
+    are mutated, filtered, sliced, etc.  By marking objects 'sticky', attributes
+    become resilent to common data manipulation operations: subset, extend,
+    append, etc. or when inserted into or extracted from recursive (i.e. list-
+    or table-like) objects. 'sticky' works on both atomic and recursive objects.
 Version: 0.2
 Date: 2016-05-15
 Authors@R: c(
@@ -21,11 +21,13 @@ Depends:
 Suggests:
     magrittr (>= 1.5),
     testthat (>= 0.10.0),
-    data.table (>= 1.9.7)
+    data.table (>= 1.9.7),
+    dplyr (>= 0.4.3)
 LazyData: TRUE
 Collate:
     'init.R'
     'sticky.R'
     'append.R'
     'extract1.R'
+    'print.R'
     'subset.R'
