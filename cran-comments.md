@@ -1,3 +1,8 @@
+Version 0.3.4 
+
+ - Add README.md badges
+ - See NEWS for other changes
+
 Version 0.3.3 
 
  - Fixed CRAN submission errors 

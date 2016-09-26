@@ -4,7 +4,7 @@
 \alias{is.sticky}
 \alias{sticky}
 \alias{unstick}
-\title{Sticky Attributes}
+\title{sticky}
 \usage{
 sticky(x)
 
@@ -18,9 +18,7 @@ is.sticky(x)
 \item{...}{Additional arguments passed to subsequent method(s)}
 }
 \description{
-Persist attributes through manipulations
-
-#
+Persist Attributes
 }
 \details{
 \code{sticky} creates objects whose attributes are resilent to subsetting and

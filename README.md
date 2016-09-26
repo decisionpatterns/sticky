@@ -1,4 +1,4 @@
-## Sticky: Persist attributes through data manipulations
+## Sticky: Persistent Attributes
 
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](http://www.r-pkg.org/badges/version/sticky)](https://cran.rstudio.com/web/packages/sticky/index.html)

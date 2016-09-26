@@ -23,4 +23,3 @@ append.sticky <- function(x, ... ) {
   mostattributes(r) <- attributes(x)
   sticky(r)
 }
-

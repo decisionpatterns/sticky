@@ -1,7 +1,7 @@
-#' @title Sticky Attributes
+#' @title sticky
 #'
 #' @description
-#' Persist attributes through manipulations
+#' Persist Attributes
 #'
 #' @param x objects to have attributes preserved.
 #' @param ... Additional arguments passed to subsequent method(s)
@@ -52,12 +52,6 @@ sticky <- function(x)
 unstick <- function(x) .deinit(x)
 
 
-# sticky.vector <- function(x) .init(x)
-
-
-# #' @rdname sticky
-# show.sticky <- function(x, ...)
-#  show( structure( x, class=setdiff(class(x), 'sticky') ) )
 
 #' @rdname sticky
 #' @importFrom methods is

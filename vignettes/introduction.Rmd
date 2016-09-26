@@ -1,5 +1,5 @@
 ---
-title: "Sticky: Persist Attributes Through Common Data Operations"
+title: "Sticky: Persistent Attributes"
 author: "Christopher Brown"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -46,9 +46,6 @@ x <- sticky(x)
 attr(x[1:3],'foo')        # 'bar' -- attribute preserved during subset
 ```
 
-
-### In Re
-
 That's really all there is to it. 
 
 
@@ -58,7 +55,7 @@ That's really all there is to it.
 ### Stable Version: CRAN (coming soon)
 
     install.packages('sticky')
-
+S
 ### Development Version: Github
 
     libraty(devtools)
