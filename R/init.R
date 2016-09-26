@@ -2,7 +2,7 @@
 #'
 #' These are internal functions for the sticky package. They are not
 #' exported and should not be used directly. Instead use the proper interface,
-#' \code{\link{sticky}}
+#' \code{\link{sticky}} and \code{\link{unstick}}
 #'
 #' @param x vector
 #'

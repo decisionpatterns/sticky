@@ -21,7 +21,7 @@ Depends:
 Suggests:
     magrittr (>= 1.5),
     testthat (>= 0.10.0),
-    data.table (>= 1.9.7),
+    data.table (>= 1.9.6),
     dplyr (>= 0.4.3),
     knitr,
     rmarkdown
@@ -34,3 +34,4 @@ Collate:
     'print.R'
     'subset.R'
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1

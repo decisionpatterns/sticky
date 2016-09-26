@@ -73,7 +73,7 @@ x_dt %>% expect_is('POSIXct')
 
 
 ## unstick
-1:5 %>% sticky %>% unstick %>% is.sticky %>% magrittr::not %>% expect_true
+1:5 %>% sticky %>% unstick %>% is.sticky %>% expect_false
 
 
 ## is.sticky
