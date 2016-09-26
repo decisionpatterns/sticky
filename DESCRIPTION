@@ -33,5 +33,6 @@ Collate:
     'extract1.R'
     'print.R'
     'subset.R'
+    'zzz.R'
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1
