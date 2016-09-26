@@ -1,18 +1,23 @@
 ## Sticky: Persist attributes through data manipulations
 
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN](http://www.r-pkg.org/badges/version/sticky.attributes)](https://cran.rstudio.com/web/packages/sticky.attributes/index.html)
-[![Downloads](http://cranlogs.r-pkg.org/badges/sticky.attributes?color=brightgreen)](http://www.r-pkg.org/pkg/sticky.attributes)
+[![CRAN](http://www.r-pkg.org/badges/version/sticky)](https://cran.rstudio.com/web/packages/sticky/index.html)
+[![Downloads](http://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](http://www.r-pkg.org/pkg/sticky)
 
-In base R, attributes when the objects they described are changed. By marking 
-objects 'sticky', attributes become resilent to normal data manipulation 
-operations: subsetted, extended, appended, etc. or when inserted into or 
-extracted from list-like objects such as data frames or data tables. It works on
-both atomic and recursive objects.
+In base R, attributes are lost when their objects are operated on by normal functions. By marking objects 'sticky', attributes become resilent to common data  
+operation: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
 
-Basically, sticky attributes stick with the object much like attributes of 
+Basically, sticky make object attributes behave much more like attributes in 
 other programming languages. There isn't much to the package. The `sticky` 
 function and it's complement, `unstick` are the only interfaces to the package.
+
+
+## Key Functions
+
+ - stick(y): make an objects attributes persist across data operations
+ 
+ - unstick: remove the stickiness of an object; attributes will no longer 
+   persist during common data opetations
 
 
 ## Example
@@ -37,12 +42,12 @@ interface to the package.
 
 ### Stable Version: CRAN (coming soon)
 
-    install.packages('sticky.attributes')
+    install.packages('sticky')
 
 ### Development Version: Github
 
     libraty(devtools)
-    lnstall_github('decisionpatterns/sticky.attributes')
+    lnstall_github('decisionpatterns/sticky')
 
 
 ## Use Cases

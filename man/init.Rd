@@ -13,7 +13,7 @@
 \item{x}{vector}
 }
 \description{
-These are internal functions for the sticky.attributes package. They are not
+These are internal functions for the sticky package. They are not
 exported and should not be used directly. Instead use the proper interface,
 \code{\link{sticky}}
 }

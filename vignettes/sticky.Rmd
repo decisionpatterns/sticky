@@ -1,0 +1,88 @@
+---
+title: "Sticky: Persist Attributes Through Common Data Operations"
+author: "Christopher Brown"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE, warning=FALSE, cache=FALSE, results='hide', message=FALSE}
+library(magrittr)
+# library(sticky)
+```
+
+In base R, an object's user-defined attributes are lost when common functions such as subset, extend, extract, etc. are used.[^1]  This is due to R's functional nature. The language is designed to encourage creating function that yield return values that are distinct from the inputs. While this often works well, the language has left attribute management to developers. The problem is, this "default"" behaviour is often undesirable. It is tedious to try manage atttribute accross these operations. It leads to confusion, boilerplate code and source for errors. 
+
+The `sticky` package alleviates this shortcomings by providing a simple mechanism for preservince attributes. By marking objects `sticky`, attributes become resilent to the common data operations, e.g. subset/extend/append or when inserted into or extracted from recursive (list-like) objects such as data frames or data tables. 'sticky' works on both atomic and recursive objects.
+
+This allows R object to behave similar to other object-oriented programming languages while retaining its functional nature. There isn't much to the package. The `sticky` 
+function and it's complement, `unstick` are the only exported functions.
+
+[^1]: Non user-defined attributes include *class* and *dimension*
+
+
+## Examples
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+   library(sticky)
+```
+
+Here is an simple example of a sticky attribute in action. Under base R, 
+attributes do not survive a slice/subset/`[` operation: 
+
+```{r, results='hide'}
+x <- 1:5
+attr(x, 'foo') <- 'bar'
+attr(x[1:3],'foo')        # NULL -- attribute was lost by the subset
+```
+    
+To ensure that the attributes get preserved, simply declare the object as `sticky`:
+
+```{r, results='hide'}
+x <- sticky(x)
+attr(x[1:3],'foo')        # 'bar' -- attribute preserved during subset
+```
+
+
+### In Re
+
+That's really all there is to it. 
+
+
+
+## Installation 
+
+### Stable Version: CRAN (coming soon)
+
+    install.packages('sticky')
+
+### Development Version: Github
+
+    libraty(devtools)
+    lnstall_github('decisionpatterns/sticky')
+
+
+## Use Cases
+
+There are a number of things that can be done with `sticky`:
+
+ * Preserve attributes of atomic or recursive objects
+ * Ensure that attributes of vectors in data.[frame|table] are preserved
+ * Build a basic class system.
+
+
+## References
+
+The issue of attribute resilence has been often asked and debated. Here are a 
+few of the most prevalent discussions.
+
+- [loss-of-attributes-despite-attempts-to-preserve-them](http://stackoverflow.com/questions/23991060/loss-of-attributes-despite-attempts-to-preserve-them)
+- [how-to-delete-a-row-from-a-data-frame-without-losing-the-attributes](http://stackoverflow.com/questions/10404224/how-to-delete-a-row-from-a-data-frame-without-losing-the-attributes)
+- [approaches-to-preserving-objects-attributes-during-extract-replace-operations](http://stackoverflow.com/questions/23841387/approaches-to-preserving-objects-attributes-during-extract-replace-operations)
+- [indexing-operation-removes-attributes](http://stackoverflow.com/questions/13432519/indexing-operation-removes-attributes)
+
+
+

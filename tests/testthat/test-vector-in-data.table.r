@@ -1,11 +1,8 @@
 # DATA TABLE
 # ----------
 
-set_foo <- function(x, value="bar") {
-    attr(x,'foo') = 'bar'
-    return(x)
-}
-
+library(magrittr)
+source('utils.r')
 
 
 if( library(data.table, quietly = TRUE, logical.return=TRUE) ) {
@@ -13,17 +10,19 @@ if( library(data.table, quietly = TRUE, logical.return=TRUE) ) {
   context('vector in data.table')
 
   x <- 1:5 %>% sticky %>% set_foo
-  y <- letters[1:5]
+  y <- letters[1:5]   %>% set_foo
 
-  dt <- data.table( stick=x, non.stick=y)
+  dt <- data.table( stick=x, non_stick=y)
 
 
   dt %>% expect_is('data.table')
-  dt$non.stick %>% is.sticky %>% expect_false
+  dt$non_stick %>% is.sticky %>% expect_false
 
   context('  $ ')
   dt$stick %>% expect_is('sticky')
   dt$stick %>% attr('foo') %>% expect_equal('bar')
+
+  dt$non_stick %>% attr('foo') %>% expect_equal('bar')
 
 
   context('  [[')
@@ -34,22 +33,30 @@ if( library(data.table, quietly = TRUE, logical.return=TRUE) ) {
   dt[['stick']] %>% expect_is('sticky')
   dt[['stick']] %>% attr('foo') %>% expect_equal('bar')
 
+  dt[[2]] %>% is.sticky() %>% expect_false()
+  dt[[2]][1:3] %>% is.sticky() %>% expect_false()
+  dt[[2]][1:3] %>% attr('foo') %>% expect_null()
+
+
+  dt[['non_stick']] %>% is.sticky() %>% expect_false()
+  dt[['non_stick']] %>% attr('foo') %>% expect_equal('bar')
+
 
   context('  [')
-  # dt %>% class %>% message
-  # dt[1:3, 'stick', with=FALSE ]
-  # dt[1:3, 'stick', with=FALSE ][[1]] %>% class %>% message
-
 
   # Simple by column name
-  dt[, 'stick', with=FALSE, drop=TRUE ]  %>% expect_is('sticky')
-  dt[, 'stick', with=FALSE, drop=TRUE ]  %>% attr('foo') %>% expect_equal('bar')
 
-  dt[, 'non.stick', with=FALSE, drop=TRUE ] %>% is.sticky %>% expect_false()
+  dt[, 'stick', with=FALSE, drop=FALSE ][[1]] %>% is.sticky %>% expect_true()
+  dt[, 'stick', with=FALSE, drop=FALSE ][[1]] %>% attr('foo') %>% expect_equal('bar')
+
+  dt[, 'non_stick', with=FALSE, drop=FALSE ][[1]] %>% is.sticky %>% expect_false()
+  dt[, 'non_stick', with=FALSE, drop=FALSE ][[1]] %>% attr('foo') %>% expect_equal('bar')
 
   # Filter by column index
-  dt[1:3, 1, with=FALSE, drop=TRUE] %>% expect_is('sticky')
-  dt[1:3, 1, with=FALSE, drop=TRUE] %>% attr('foo') %>% expect_equal('bar')
+  dt[1:3, 1, with=FALSE, drop=FALSE][[1]] %>% expect_is('sticky')
+  dt[1:3, 1, with=FALSE, drop=FALSE][[1]] %>% expect_is('sticky')
+  dt[1:3, 1, with=FALSE, drop=FALSE][[1]] %>% attr('foo') %>% expect_equal('bar')
+
 
   # # Filter by column and row
 #  browser()

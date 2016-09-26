@@ -1,12 +1,6 @@
 
 library(magrittr)
-
-
-set_foo <- function(x, value="bar") {
-    attr(x,'foo') = 'bar'
-    return(x)
-}
-
+source("utils.r")
 
 context('data.frame')
 x <- 1:5 %>% sticky %>% set_foo

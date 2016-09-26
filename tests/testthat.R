@@ -1,4 +1,4 @@
 library(testthat)
-library(sticky.attributes)
+library(sticky)
 
-test_check("sticky.attributes")
+test_check("sticky")

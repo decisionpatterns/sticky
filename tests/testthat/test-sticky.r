@@ -2,7 +2,7 @@
 # internals are: init_units, set_units, get_units, remove_units
 
 library(magrittr)
-
+source('utils.r')
 
 # HEADER
 # Functions used for testing
@@ -72,8 +72,8 @@ x_dt %>% expect_is('sticky')
 x_dt %>% expect_is('POSIXct')
 
 
-## unsticky
-1:5 %>% sticky %>% unsticky %>% is.sticky %>% magrittr::not %>% expect_true
+## unstick
+1:5 %>% sticky %>% unstick %>% is.sticky %>% magrittr::not %>% expect_true
 
 
 ## is.sticky

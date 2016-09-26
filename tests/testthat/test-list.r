@@ -1,4 +1,5 @@
 library(magrittr)
+source('utils.r')
 
 context("list")
 

@@ -2,10 +2,7 @@
 library(magrittr)
 library(data.table)
 
-set_foo <- function(x, value="bar") {
-    attr(x,'foo') = 'bar'
-    return(x)
-}
+source("utils.r")
 
 
 context('data.table')

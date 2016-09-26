@@ -6,23 +6,25 @@ Description: In base R, attributes disappear when the objects they described
     become resilent to common data manipulation operations: subset, extend,
     append, etc. or when inserted into or extracted from recursive (i.e. list-
     or table-like) objects. 'sticky' works on both atomic and recursive objects.
-Version: 0.2
-Date: 2016-05-15
+Version: 0.3.0
+Date: 2016-09-25
 Authors@R: c(
       person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
       person("Decision Patterns", role = "cph")
     )
 License: GPL-2 | file LICENSE
-URL: https://github.com/decisionpatterns/sticky.attributes
+URL: https://github.com/decisionpatterns/sticky
     http://www.decisionpatterns.com
-BugReports: https://github.com/decisionpatterns/sticky.attributes/issues
+BugReports: https://github.com/decisionpatterns/sticky/issues
 Depends:
     R (>= 3.1.0)
 Suggests:
     magrittr (>= 1.5),
     testthat (>= 0.10.0),
     data.table (>= 1.9.7),
-    dplyr (>= 0.4.3)
+    dplyr (>= 0.4.3),
+    knitr,
+    rmarkdown
 LazyData: TRUE
 Collate:
     'init.R'
@@ -31,3 +33,4 @@ Collate:
     'extract1.R'
     'print.R'
     'subset.R'
+VignetteBuilder: knitr

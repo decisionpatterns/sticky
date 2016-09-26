@@ -1,6 +1,9 @@
 # APPEND
 # ----------
 
+library(magrittr)
+source("utils.r")
+
 context('vector append')
 x. <- 1:5 %>% sticky
 x. %>% expect_is('sticky')
