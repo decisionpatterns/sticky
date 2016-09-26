@@ -1,15 +1,12 @@
 ## Sticky: Persist attributes through data manipulations
 
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
-<!--[![CRAN](http://www.r-pkg.org/badges/version/sticky)](https://cran.rstudio.com/web/packages/sticky/index.html)-->
-[![Downloads](http://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](http://www.r-pkg.org/pkg/sticky)
+<!--[![CRAN](http://www.r-pkg.org/badges/version/sticky)](https://cran.rstudio.com/web/packages/sticky/index.html)
+[![Downloads](http://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](http://www.r-pkg.org/pkg/sticky)-->
 
-In base R, attributes are lost when their objects are operated on by normal functions. By marking objects 'sticky', attributes become resilent to common data  
-operation: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
+In base R, attributes are lost when their objects are operated on by normal functions. By marking objects 'sticky', attributes become resilent to common data operation: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
 
-Basically, sticky make object attributes behave much more like attributes in 
-other programming languages. There isn't much to the package. The `sticky` 
-function and it's complement, `unstick` are the only interfaces to the package.
+Basically, sticky make object attributes behave much more like attributes in other programming languages. There isn't much to the package. The `sticky` function and it's complement, `unstick` are the only interfaces to the package.
 
 
 ## Key Functions
