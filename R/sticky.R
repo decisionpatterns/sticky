@@ -60,6 +60,7 @@ unstick <- function(x) .deinit(x)
 #  show( structure( x, class=setdiff(class(x), 'sticky') ) )
 
 #' @rdname sticky
+#' @importFrom methods is
 #' @export
 
 is.sticky <- function(x) is(x,'sticky') | is(x,'sticky_recursive')
