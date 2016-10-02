@@ -1,18 +1,26 @@
-# Version 0.3.4
+## Version 0.3.5
+
+ - README.md: Fix Canonical URL using use_cran_badge()
+
+## Version 0.3.4
 
  - Add Badges
  - Fix vignette title
  - Update docs
 
 
-# Version 0.3.3
+## Version 0.3.3
 
 First Accepted CRAN release
 
-# Version 0.2
+
+## Version 0.2
+
  - Add tests
  - Support recursive objects
  - Ready for CRAN
 
-# Version 0.1
+
+## Version 0.1
+
  - Initial Release (Git Hub only)
