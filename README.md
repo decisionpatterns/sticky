@@ -1,7 +1,7 @@
 ## Sticky: Persistent Attributes
 
 [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN](http://www.r-pkg.org/badges/version/sticky)](https://cran.rstudio.com/web/packages/sticky/index.html)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/sticky)](http://cran.r-project.org/package=sticky)
 [![Downloads](http://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](http://www.r-pkg.org/pkg/sticky)
 
 In base R, attributes are lost when their objects are operated on by normal functions. By marking objects 'sticky', attributes become resilent to common data operation: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
