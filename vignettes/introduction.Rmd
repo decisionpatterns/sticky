@@ -46,16 +46,13 @@ x <- sticky(x)
 attr(x[1:3],'foo')        # 'bar' -- attribute preserved during subset
 ```
 
-That's really all there is to it. 
-
-
 
 ## Installation 
 
 ### Stable Version: CRAN (coming soon)
 
     install.packages('sticky')
-S
+
 ### Development Version: Github
 
     libraty(devtools)
@@ -80,6 +77,4 @@ few of the most prevalent discussions.
 - [how-to-delete-a-row-from-a-data-frame-without-losing-the-attributes](http://stackoverflow.com/questions/10404224/how-to-delete-a-row-from-a-data-frame-without-losing-the-attributes)
 - [approaches-to-preserving-objects-attributes-during-extract-replace-operations](http://stackoverflow.com/questions/23841387/approaches-to-preserving-objects-attributes-during-extract-replace-operations)
 - [indexing-operation-removes-attributes](http://stackoverflow.com/questions/13432519/indexing-operation-removes-attributes)
-
-
 

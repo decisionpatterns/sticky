@@ -1,3 +1,8 @@
+## Version 0.3.6
+
+ - README.md: Fix Canonical URL using use_cran_badge()  AGAIN!
+
+
 ## Version 0.3.5
 
  - README.md: Fix Canonical URL using use_cran_badge()
