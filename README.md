@@ -31,7 +31,17 @@ To ensure that they get preserved, simply declare the object as `sticky`:
     x <- sticky(x)
     attr(x[1:3],'foo')        # 'bar' -- attribute preserved    
 
-That it. The `sticky` function (and it's complement, `unstick`) are the only 
+`sticky()` works for vectors inside table-like objects ( i.e. data.frames 
+and data.tables), preserving their attributes during table operations.
+
+    df <- data.frame( 
+      sticky   = sticky( structure(1:5, foo="bar") ),
+      nonstick = structure( letters[1:5], foo="bar" )
+    )
+    attr( df[2:3,"nonstick"], 'foo' )  # NULL
+    attr( df[2:3,"sticky"], 'foo' )    # bar
+    
+The `sticky` function (and it's complement, `unstick`) are the only 
 interface to the package.
 
 
