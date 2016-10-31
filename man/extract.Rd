@@ -15,6 +15,10 @@
 Extract
 }
 \details{
--tk
+Implements `[` for sticky attributes. This methods ensures that existing
+attributes are propogated forward.
+}
+\seealso{
+\code{\link[base]{attributes}}, specifically \code{mostattributes}
 }
 
