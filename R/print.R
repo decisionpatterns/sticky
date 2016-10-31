@@ -22,7 +22,7 @@
 #' @export
 
 print.sticky <- function(x, ...) {
-  message( "sticky ", setdiff( class(x), "sticky" ) )
+  if( interactive() ) message( "sticky ", setdiff( class(x), "sticky" ) )
   print( unstick(x), ... )
   return( invisible(x) )
 }

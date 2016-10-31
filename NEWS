@@ -1,6 +1,15 @@
+## Version 0.4.0
+
+ - #2: now matrices are properly supported.
+   - Thanks jwdink.
+   - Accomodate `mostattributes` for matrices to propogate to result of `extract1`.
+   - Adds tests for matrices.
+ - Add utils.R
+
+
 ## Version 0.3.6
 
-   - README.md: Fix Canonical URL using use_cran_badge()
+ - README.md: Fix Canonical URL using use_cran_badge()
 
 ## Version 0.3.4
 
