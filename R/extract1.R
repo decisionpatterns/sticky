@@ -27,8 +27,8 @@
   #' When `[`` produces a different class, drop=TRUE
   #' We should only copy attributes when the
 
-  cls_x <- class(x) %>% setdiff('sticky')
-  cls_r <- class(r) %>% setdiff("sticky")
+  cls_x <- setdiff( class(x), 'sticky' )
+  cls_r <- setdiff( class(r), 'sticky' )
 
   if(
     length( cls_x ) == length( cls_r ) &&
