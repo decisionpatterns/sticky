@@ -3,14 +3,20 @@
 \name{sticky}
 \alias{sticky}
 \alias{unstick}
+\alias{unsticky}
 \alias{is.sticky}
+\alias{sticky_all}
 \title{sticky}
 \usage{
 sticky(x)
 
 unstick(x)
 
+unsticky(x)
+
 is.sticky(x)
+
+sticky_all(x)
 }
 \arguments{
 \item{x}{objects to have attributes preserved.}

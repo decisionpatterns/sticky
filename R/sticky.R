@@ -51,6 +51,10 @@ sticky <- function(x)
 
 unstick <- function(x) .deinit(x)
 
+#' @rdname sticky
+#' @export
+
+unsticky <- function(x) .deinit(x)
 
 
 #' @rdname sticky
@@ -58,3 +62,21 @@ unstick <- function(x) .deinit(x)
 #' @export
 
 is.sticky <- function(x) is(x,'sticky') | is(x,'sticky_recursive')
+
+
+#' @rdname sticky
+#' @export
+
+sticky_all <- function(x) {
+
+  if( ! is.recursive(x) )
+    warn( "x is not recursive. Cannot make internal objects sticky.")
+
+  for( i in 1:length(x) ) {
+    x[[i]] <- sticky( x[[i]] )
+  }
+
+  return(x)
+}
+
+

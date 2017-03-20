@@ -12,9 +12,10 @@
 #' @seealso
 #'   \code{\link[base]{attributes}}, specifically \code{mostattributes}
 #'
-#' @rdname extract
-#' @include sticky.R
+#' @rdname extract1
 #' @export
+#' @include sticky.R
+
 
 `[.sticky` <- function(x,...) {
 
