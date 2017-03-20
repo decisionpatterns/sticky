@@ -1,6 +1,6 @@
 ## Sticky: Persistent Attributes
 
-[![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+<!--- [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) --> 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/sticky)](https://cran.r-project.org/package=sticky)
 [![Downloads](https://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](https://www.r-pkg.org/pkg/sticky)
 
