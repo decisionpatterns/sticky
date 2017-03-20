@@ -1,3 +1,8 @@
+## Version 0.5.0 
+
+ - Fixes Issues #1,#2,#3
+ 
+
 ## Version 0.3.6
 
  - README.md: Fix Canonical URL using use_cran_badge()  AGAIN!

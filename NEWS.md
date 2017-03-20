@@ -1,3 +1,9 @@
+## Version 0.5.0 
+
+ - Fix #1: sticky_all function added
+ - Fix #2: Fix na.exclude issue 
+ - Fix #3: Fix issue with dropping dimensions
+
 ## Version 0.4.0
 
  - #2: now matrices are properly supported.

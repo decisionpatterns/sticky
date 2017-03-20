@@ -70,7 +70,7 @@ is.sticky <- function(x) is(x,'sticky') | is(x,'sticky_recursive')
 sticky_all <- function(x) {
 
   if( ! is.recursive(x) )
-    warn( "x is not recursive. Cannot make internal objects sticky.")
+    base::warning( "x is not recursive. Cannot make internal objects sticky.")
 
   for( i in 1:length(x) ) {
     x[[i]] <- sticky( x[[i]] )
