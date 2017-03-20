@@ -29,6 +29,7 @@
 
   cls_x <- class(x) %>% setdiff('sticky')
   cls_r <- class(r) %>% setdiff("sticky")
+
   if(
     length( cls_x ) == length( cls_r ) &&
     all( cls_x == cls_r )
