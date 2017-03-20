@@ -20,4 +20,3 @@ Append elements to sticky object
 \seealso{
 \code{\link[base]{append}}
 }
-

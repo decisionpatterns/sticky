@@ -21,4 +21,3 @@ attributes are propogated forward.
 \seealso{
 \code{\link[base]{attributes}}, specifically \code{mostattributes}
 }
-

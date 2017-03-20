@@ -23,7 +23,16 @@
   has_dim <- has_attr(r, 'dim')
   r_dim <- dim(r)
 
-  mostattributes(r) <- attributes(x)
+  #' When `[`` produces a different class, drop=TRUE
+  #' We should only copy attributes when the
+
+  cls_x <- class(x) %>% setdiff('sticky')
+  cls_r <- class(r) %>% setdiff("sticky")
+  if(
+    length( cls_x ) == length( cls_r ) &&
+    all( cls_x == cls_r )
+  )
+    mostattributes(r) <- attributes(x)
 
   if( has_dim ) dim(r) <- r_dim
 
