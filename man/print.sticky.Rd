@@ -27,4 +27,3 @@ prints a sticky object; this is also the default method for sticky objects
   x
 
 }
-
