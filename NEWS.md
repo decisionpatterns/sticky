@@ -1,3 +1,8 @@
+## Version 0.5.3
+
+ - Fix problem where objects with additional classes would not retain stickiness
+   (or other classes). This was an artifact of Fix#3.
+
 ## Version 0.5.0 
 
  - Fix #1: sticky_all function added

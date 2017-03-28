@@ -22,7 +22,8 @@
 #' @export
 
 print.sticky <- function(x, ...) {
-  if( interactive() ) message( "sticky ", paste( setdiff( class(x), "sticky" ), collapse=" " ) )
-  print( unstick(x), ... )
-  return( invisible(x) )
+  if( interactive() ) message( "sticky: ", paste( setdiff( class(x), "sticky" ), collapse=" " ) )
+  r <- NextMethod("print", unstick(x) )
+  # print( unstick(x), ... )
+  return( invisible(r) )
 }
