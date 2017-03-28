@@ -31,8 +31,9 @@
   cls_r <- setdiff( class(r), 'sticky' )
 
   if(
-    length( cls_x ) == length( cls_r ) &&
-    all( cls_x == cls_r )
+    all( cls_r %in% cls_x )
+    # length( cls_x ) == length( cls_r ) &&  # all( cls_r %in% cls_x )
+    # all( cls_x == cls_r )
   )
     mostattributes(r) <- attributes(x)
 
