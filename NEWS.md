@@ -1,3 +1,8 @@
+## Version 0.5.4
+
+ - Improve README.md for recursive objects (Thanks: K. Klauder)
+ - Change Suggests dplyr -> tibble
+
 ## Version 0.5.3
 
  - Fix problem where objects with additional classes would not retain stickiness

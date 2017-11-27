@@ -7,9 +7,7 @@
 [![software impact](http://depsy.org/api/package/r/formula.tools/badge.svg)](http://depsy.org/package/r/formula.tools)
 
 
-In base R, objects lose attributes in many common operations. Marking objects 'sticky', make attributes resilent to these operations: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
-
-Basically, sticky make object attributes behave much more like attributes in other programming languages. There isn't much to the package. `sticky`/`unstick`and `sticky_all` are the only interfaces to the package.
+In base R, objects lose attributes in many common operations such as: subset, [, [[<-, append, etc. or when inserted into or extracted from recusive (list-like) objects such as data frames or data tables. Marking objects 'sticky', make attributes resilent to these operations. In essence, sticky makes object behave more like objects in other languages whose attributes are preserved. There isn't much to the package. `sticky`/`unstick`and `sticky_all` are the only interfaces to the package.
 
 
 ## Key Functions
@@ -19,7 +17,7 @@ Basically, sticky make object attributes behave much more like attributes in oth
  - `unstick`: remove the stickiness of an object; attributes will no longer 
    persist during common data opetations
 
- - `sticky_all` : make all elements of a recursive object sticky.
+ - `sticky_all` : make all elements of a recursive object (e.g list, data frames, etc.) sticky.
  
 
 ## Example
@@ -41,14 +39,17 @@ and data.tables), preserving their attributes during table operations.
 
     df <- data.frame( 
       sticky   = sticky( structure(1:5, foo="bar") ),
-      nonstick = structure( letters[1:5], foo="bar" )
+      nonstick = structure( letters[1:5], foo="baz" )
     )
     attr( df[2:3,"nonstick"], 'foo' )  # NULL
     attr( df[2:3,"sticky"], 'foo' )    # bar
     
     
-`sticky_all` will make all members of a recursive object sticky.
+If all elements of a list or a data.frame need to behave in a sticky manner, 
+use `sticky_all`. 
 
+    df <- sticky_all(df)
+    attr( df[2:3,"nonstick"], 'foo' )  # Now 'baz'
 
 
 

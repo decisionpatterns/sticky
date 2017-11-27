@@ -58,6 +58,14 @@ and data.tables), preserving their attributes during table operations.
     attr( df[2:3,"sticky"], 'foo' )    # bar
 ```
 
+If all elements of a list or a data.frame need to behave in a sticky manner, 
+use `sticky_all`. 
+
+```{r, results='hide'}
+    df <- sticky_all(df)
+    attr( df[2:3,"nonstick"], 'foo' )  # Now 'baz'
+```
+
 
 
 ## Installation 
