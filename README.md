@@ -3,6 +3,9 @@
 <!--- [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) --> 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/sticky)](https://cran.r-project.org/package=sticky)
 [![Downloads](https://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](https://www.r-pkg.org/pkg/sticky)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/formula.tools)](http://cran.rstudio.com/web/packages/formula.tools/index.html)
+[![software impact](http://depsy.org/api/package/r/formula.tools/badge.svg)](http://depsy.org/package/r/formula.tools)
+
 
 In base R, objects lose attributes in many common operations. Marking objects 'sticky', make attributes resilent to these operations: subset, [, [[<-, append, etc. or when inserted into or extracted from list-like objects such as data frames or data tables. 
 
