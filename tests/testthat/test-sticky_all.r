@@ -27,7 +27,7 @@ test_that( "sticky_all-data.frame", {
 test_that( "sticky_all-tibble", {
 
   context("  tibble")
-  tbl <- as.tibble(df)
+  tbl <- as_tibble(df)
   tbl[["stick"]] %>% is.sticky %>% expect_true()
   tbl[["non.stick"]] %>% is.sticky %>% expect_false()
 

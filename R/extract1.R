@@ -7,7 +7,7 @@
 #' @details
 #'
 #' Implements `[` for sticky attributes. This methods ensures that existing
-#' attributes are propogated forward.
+#' attributes are propagated forward.
 #'
 #' @seealso
 #'   \code{\link[base]{attributes}}, specifically \code{mostattributes}

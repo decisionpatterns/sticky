@@ -54,9 +54,9 @@ test_that( "[ by logical", {
   dt[1:3,c(T,F),drop=FALSE] %>% attr('foo') %>% expect_equal('bar')
 })
 
-test_that( "[ with drop", {
-  #' For some reason these test dail though the methods succeed.
-  #dt[ 1:3 , stick, drop=TRUE ] %>% expect_is('sticky')
-  # dt[ 1:3 , stick, drop=TRUE ] %>% expect_is('integer')
-
-})
+#' test_that( "[ with drop", {
+#'   #' For some reason these test dail though the methods succeed.
+#'   #dt[ 1:3 , stick, drop=TRUE ] %>% expect_is('sticky')
+#'   # dt[ 1:3 , stick, drop=TRUE ] %>% expect_is('integer')
+#'
+#' })

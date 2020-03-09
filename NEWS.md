@@ -1,3 +1,8 @@
+## Version 0.5.6
+
+  - Fix Documentation issues
+  - Fix for R-3.6.3
+
 ## Version 0.5.4
 
  - Improve README.md for recursive objects (Thanks: K. Klauder)
@@ -18,7 +23,7 @@
 
  - #2: now matrices are properly supported.
    - Thanks jwdink.
-   - Accomodate `mostattributes` for matrices to propogate to result of `extract1`.
+   - Accommodate `mostattributes` for matrices to propagate to result of `extract1`.
    - Adds tests for matrices.
  - Add utils.R
 

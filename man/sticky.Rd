@@ -20,14 +20,12 @@ sticky_all(x)
 }
 \arguments{
 \item{x}{objects to have attributes preserved.}
-
-\item{...}{Additional arguments passed to subsequent method(s)}
 }
 \description{
 Persist Attributes
 }
 \details{
-\code{sticky} creates objects whose attributes are resilent to subsetting and
+\code{sticky} creates objects whose attributes are resilient to subsetting and
 placing in containers such as lists, data.frames and data.tables.
 }
 \examples{

@@ -4,5 +4,9 @@
 issues
 
 cran-comments.md
+TODO.md
 
-
+^doc$
+^Meta$
+^revdep$
+^CRAN-RELEASE$

@@ -4,10 +4,10 @@
 #' Persist Attributes
 #'
 #' @param x objects to have attributes preserved.
-#' @param ... Additional arguments passed to subsequent method(s)
+# @param ... Additional arguments passed to subsequent method(s)
 #'
 #' @details
-#' \code{sticky} creates objects whose attributes are resilent to subsetting and
+#' \code{sticky} creates objects whose attributes are resilient to subsetting and
 #' placing in containers such as lists, data.frames and data.tables.
 #'
 #' @references

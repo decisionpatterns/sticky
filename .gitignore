@@ -15,3 +15,5 @@ vignettes/*.pdf
 .httr-oauth
 .Rproj.user
 inst/doc
+doc
+Meta

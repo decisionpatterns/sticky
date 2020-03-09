@@ -19,7 +19,7 @@ exported and should not be used directly. Instead use the proper interface,
 }
 \details{
 \code{.init} : initializes the class
-\code{.deinit} : un-initialize the class
+\code{.deinit} : uninitialize the class
 
 These are internals functions not to be called directly, please use the
 interfaces, \code{sticky} and \code{unsticky}.

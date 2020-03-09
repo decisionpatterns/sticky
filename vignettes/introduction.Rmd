@@ -14,9 +14,9 @@ library(magrittr)
 # library(sticky)
 ```
 
-In base R, an object's user-defined attributes are lost when common functions such as subset, extend, extract, etc. are used.[^1]  This is due to R's functional nature. The language is designed to encourage creating function that yield return values that are distinct from the inputs. While this often works well, the language has left attribute management to developers. The problem is, this "default"" behaviour is often undesirable. It is tedious to try manage atttribute accross these operations. It leads to confusion, boilerplate code and source for errors. 
+In base R, an object's user-defined attributes are lost when common functions such as subset, extend, extract, etc. are used.[^1]  This is due to R's functional nature. The language is designed to encourage creating function that yield return values that are distinct from the inputs. While this often works well, the language has left attribute management to developers. The problem is, this "default"" behavior is often undesirable. It is tedious to try manage attribute across these operations. It leads to confusion, boilerplate code and source for errors. 
 
-The `sticky` package alleviates this shortcomings by providing a simple mechanism for preservince attributes. By marking objects `sticky`, attributes become resilent to the common data operations, e.g. subset/extend/append or when inserted into or extracted from recursive (list-like) objects such as data frames or data tables. 'sticky' works on both atomic and recursive objects.
+The `sticky` package alleviates this shortcomings by providing a simple mechanism for preserving attributes. By marking objects `sticky`, attributes become resilient to the common data operations, e.g. subset/extend/append or when inserted into or extracted from recursive (list-like) objects such as data frames or data tables. 'sticky' works on both atomic and recursive objects.
 
 This allows R object to behave similar to other object-oriented programming languages while retaining its functional nature. There isn't much to the package. The `sticky` 
 function and it's complement, `unstick` are the only exported functions.
@@ -91,7 +91,7 @@ There are a number of things that can be done with `sticky`:
 
 ## References
 
-The issue of attribute resilence has been often asked and debated. Here are a 
+The issue of attribute resilience has been often asked and debated. Here are a 
 few of the most prevalent discussions.
 
 - [loss-of-attributes-despite-attempts-to-preserve-them](http://stackoverflow.com/questions/23991060/loss-of-attributes-despite-attempts-to-preserve-them)

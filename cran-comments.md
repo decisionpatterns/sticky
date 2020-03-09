@@ -1,3 +1,7 @@
+## Version 0.5.6
+ 
+ - minor fix release
+
 ## Version 0.5.1 
 
  - Fixes http -> https links in README.md
