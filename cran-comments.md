@@ -1,5 +1,7 @@
+## Version 0.5.6.1
+ - Fix README.md badge links
+
 ## Version 0.5.6
- 
  - minor fix release
 
 ## Version 0.5.1 

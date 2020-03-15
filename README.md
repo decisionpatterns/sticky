@@ -3,8 +3,8 @@
 <!--- [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) --> 
 [![CRAN_Status_Badge](https://r-pkg.org/badges/version/sticky)](https://cran.r-project.org/package=sticky)
 [![Downloads](https://cranlogs.r-pkg.org/badges/sticky?color=brightgreen)](https://r-pkg.org/pkg/sticky)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/formula.tools)](http://cran.rstudio.com/web/packages/formula.tools/index.html)
-[![software impact](http://depsy.org/api/package/r/formula.tools/badge.svg)](http://depsy.org/package/r/formula.tools)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/sticky)](https://CRAN.R-project.org/package=sticky)
+[![software impact](http://depsy.org/api/package/r/sticky/badge.svg)](http://depsy.org/package/r/sticky)
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->

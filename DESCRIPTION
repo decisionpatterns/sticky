@@ -6,8 +6,8 @@ Description: In base R, object attributes are lost when objects are modified by
     etc. This packages allows objects to be marked as 'sticky' and have
     attributes persisted during these operations or when inserted
     into or extracted from list-like or table-like objects.
-Version: 0.5.6
-Date: 2020-03-08
+Version: 0.5.6.1
+Date: 2020-03-15
 Authors@R: c(
       person("Christopher", "Brown", , "chris.brown@decisionpatterns.com", c("aut", "cre") ),
       person("Decision Patterns", role = "cph")
