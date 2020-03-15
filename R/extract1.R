@@ -19,6 +19,7 @@
 
 `[.sticky` <- function(x,...) {
 
+  # GET RETURN VALUE OF NEXT METHOD
   r <- NextMethod("[")
 
   has_dim <- has_attr(r, 'dim')
@@ -34,10 +35,15 @@
     all( cls_r %in% cls_x )
     # length( cls_x ) == length( cls_r ) &&  # all( cls_r %in% cls_x )
     # all( cls_x == cls_r )
-  )
-    mostattributes(r) <- attributes(x)
+  ) {
+    which_attributes <- attributes(x) %>% setdiff( attributes(r) )
+    move_these <- attributes(x) %>% names %>% setdiff( attributes(r) %>% names )
+    if ( length(move_these) > 0 )
+      mostattributes(r) <- modifyList( attributes(r), attributes(x)[ move_these ] )
+  }
 
   if( has_dim ) dim(r) <- r_dim
 
   r
 }
+
